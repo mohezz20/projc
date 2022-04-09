@@ -15,7 +15,7 @@
     
         <div class="card" data-page="admin/ad_add_stu.php">إدخال طالب</div><br/><br/>
         <div class="card" data-page="admin/ad_add_dr.php">إدخال عضو هيئة التدريس</div><br/><br/>
-        <div class="card" data-page="admin/ad_add_level.php">إدخال الفرقة</div><br/><br/>
+        <div class="card" data-page="admin/ad_add_level_pre.php">إدخال الفرقة</div><br/><br/>
         <div class="card" data-page="admin/ad_add_part.php">إدخال القسم</div><br/><br/>
         <div class="card" data-page="admin/ad_add_subj.php">إدخال المادة</div><br/><br/><br/><br/>
 

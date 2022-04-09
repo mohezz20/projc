@@ -38,8 +38,21 @@ class myload {
             $fcont = str_replace('{{'.$v.'}}' ,$contents,$fcont);
             //echo $fcont . "\n";
         }
+        $fcont=$this->from_post($fcont);
         echo $fcont . "\n";
     }
+
+    function from_post($pcont){
+        preg_match_all('/from_post{{\w+/',$pcont,$m );
+        $x=$m[0];
+        $y='from_post{{';
+        foreach($x as $k => $v){
+            $v= str_replace($y,'',$v);
+            $pcont = str_replace('from_post{{'.$v ,$_POST[$v],$pcont);
+        }
+        return $pcont;
+    }
+
 }
 
 

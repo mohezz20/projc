@@ -9,13 +9,22 @@
 </head>
 
 <body dir="rtl" align="center">
-    <form action="">
-        <select name="level_name">
-            <option value="">الأولي</option>
-            <option value="">الثانية</option>
-            <option value=""> الثالثة</option>
-            <option value=""> الرابعة</option>
-        </select><br /><br />
+    <div>
+        لادخال فرقة لكلية 
+        {{collage_name}}
+        وذلك لقسم 
+        {{part_name}}
+        يرجي ادخال اسم الفرقة
+    </div>
+    <form action="" method="post">
+        <div>
+            <label for="">اسم الفرقة</label>
+            <input type="text" name="name">
+            <input type="hidden" name="part_id" value="from_post{{part_id">
+            <input type="hidden" name="page" value="admin/ad_add_level.php">
+            <input type="hidden" name="form_name" value="add_level">
+        </div>
+        <br /><br />
         <input type="submit" name="send" value="ارسال">
     </form>
 </body>

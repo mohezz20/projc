@@ -91,3 +91,17 @@ function add_part(){
         $_POST['page'] = 'login.php';
     }
 }
+
+function add_level(){
+    if (checklogin()) {
+        global $db;
+        include './autoInsert.php';
+        $ins = new autoInsert();
+        $ins->db_conn = $db;
+        $last_id = $ins->iInsert('level', $_POST);
+        
+        //var_dump($last_id);
+    }else{
+        $_POST['page'] = 'login.php';
+    }
+}
