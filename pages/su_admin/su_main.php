@@ -10,7 +10,7 @@
     </head>
 
     <body dir="ltr">
-        <form>
+        <form action="" method="POST">
 اسم الكلية 
 <input type="text" name="collage_name" id=" "><br /><br />
             اسم المسئول<br />
@@ -22,6 +22,7 @@
 
             <input type="submit" name="send" value="">
             <input type="hidden" name="role" value="ad">
+            <input type="hidden" name="page" value="su_admin/su_main.php">
             <input type="hidden" name="form_name" value="creat_ad">
 
             
