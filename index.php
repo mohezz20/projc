@@ -28,10 +28,10 @@ if (isset($_POST['page'])) {
 function login()
 {
     global $db;
-    var_dump($db);
+    //var_dump($db);
     extract($_POST);
     include './querys.php';
-    echo $q['login'];
+    //echo $q['login'];
     $res=$db->query($q['login']);
     //var_dump($res);
     if($res->num_rows > 0){
