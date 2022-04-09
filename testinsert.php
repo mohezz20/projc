@@ -8,4 +8,6 @@ $ins->iSelect('test');
 
 $ins->iUpdate('stu',$_POST,' id = 9 ')
 
+
+
 ?>
