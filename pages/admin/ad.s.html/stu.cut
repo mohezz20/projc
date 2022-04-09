@@ -1,0 +1,6 @@
+ <tr>
+ <td>{{real_name}}</td>
+ <td>{{emil_stu}}</td>
+ <td>{{level_stu}}</td>
+ <td>{{pass_stu}}</td>
+ </tr> 
