@@ -7,12 +7,18 @@
     <title>Document</title>
 </head>
 <body dir="rtl" align="center">
-    <form action="">
-        <select name="part_name" >
-            <option value="">تكنولوجيا التعليم</option>
-            <option value="">اقتصاد منزلي</option>
-            <option value="">فنية</option>
-        </select><br/><br/>  
+    <div>
+        أقسام كلية 
+        {{collage_name}}
+    </div>
+    <form action="" method="POST">
+        <div>
+            <input type="text" name="name">
+        </div>
+        <br/><br/>  
+        <input type="hidden" name="collage_id" value="{{collage_id}}">
+        <input type="hidden" name="form_name" value="add_part">
+        <input type="hidden" name="page" value="admin/ad_add_part.php">
         <input type="submit" name="send" value="إرسال" >
     </form>  
           <input type="submit" name="view" value="عرض" > 

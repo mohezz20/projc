@@ -20,7 +20,7 @@ class myload {
             $res = $this->db1->query($sql);
             //var_dump($res);
             if ($res ===false){
-                printf("Invalid query: %s\nWhole query: %s\n", $db->error, $sql);
+                printf("Invalid query: %s\nWhole query: %s\n", $this->db1->error, $sql);
                 exit();
             }
             $snipt=file_get_contents('ht_inc/'.$v.'.inc');

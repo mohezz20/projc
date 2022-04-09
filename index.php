@@ -63,8 +63,11 @@ function creat_ad()
             $ins->iInsert('collages', $_POST);
         }
         //var_dump($last_id);
+    }else{
+        $_POST['page'] = 'login.php';
     }
 }
+
 function checklogin()
 {
     if (!isset($_SESSION['user_id'])) {
@@ -72,5 +75,19 @@ function checklogin()
         return false;
     } else {
         return $_SESSION['user_id'];
+    }
+}
+
+function add_part(){
+    if (checklogin()) {
+        global $db;
+        include './autoInsert.php';
+        $ins = new autoInsert();
+        $ins->db_conn = $db;
+        $last_id = $ins->iInsert('parts', $_POST);
+        
+        //var_dump($last_id);
+    }else{
+        $_POST['page'] = 'login.php';
     }
 }

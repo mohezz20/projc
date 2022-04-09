@@ -91,18 +91,19 @@
     <form action="" method="post" name="gooo">
         <input type="hidden" name="page" id="">
     </form>
-</body>
-<script>
-    cards= document.getElementsByClassName('card');
-    
-    for (const iterator of cards) {
-        iterator.addEventListener("click", submitit);
-    }
-function submitit(){
-    //alert(this.dataset.page);
-    document.forms.gooo.elements.page.value=this.dataset.page;
-    document.forms.gooo.submit();
-}
 
-</script>
+    <script>
+        cards= document.getElementsByClassName('card');
+        
+        for (const iterator of cards) {
+            iterator.addEventListener("click", submitit);
+        }
+    function submitit(){
+        //alert(this.dataset.page);
+        document.forms.gooo.elements.page.value=this.dataset.page;
+        document.forms.gooo.submit();
+    }
+    
+    </script>
+</body>
 </html>
