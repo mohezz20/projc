@@ -8,15 +8,34 @@
 </head>
 <body>
     <div>
-        لاضافة طالب يرجي إختيار القسم والفرقة
+        لاضافة طالب يرجي إختيار القسم ثم الفرقة
+    </div>
+    <div>
+        <select name="parts" id="parts" onchange="fill_level()">
+            {{colege_parts}}
+        </select>
+        <select name="level" id="level" onchange="fill_level()">
+            
+        </select>
     </div>
 <script src="./js/jquery.js"></script>
 <script>
-    p={};
-    p['part_id']
-    $.post("./index.php",p,function(datatext){
+    
+    function fill_level(){
+        x=document.getElementById('parts')
+        //alert(x.value);
+        //this.options[this.selectedIndex].value
+        
+        p={};
+        p['part_id']=x.value;
+        p['form_name']='get_levels';
+        $.post("./index.php",p,function(datatext){
         alert(datatext);
+        ops=JSON.parse(datatext);
+        alert(ops[0]['name'])
+
     });
+    }
 </script>
 </body>
 

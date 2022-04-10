@@ -30,9 +30,9 @@ function login()
     global $db;
     //var_dump($db);
     extract($_POST);
-    include './querys.php';
+    include './sql_inc/login.php';
     //echo $q['login'];
-    $res = $db->query($q['login']);
+    $res = $db->query($sql);
     //var_dump($res);
     if ($res->num_rows > 0) {
         $row = $res->fetch_assoc();
@@ -104,4 +104,18 @@ function add_level(){
     }else{
         $_POST['page'] = 'login.php';
     }
+    
 }
+function get_levels(){
+        if (checklogin()) {
+            global $db;
+            extract($_POST);
+            include './sql_inc/levels.php';
+            //echo $q['login'];
+            $res = $db->query($sql);
+            //var_dump($db->error);
+            $rows=$res->fetch_all(MYSQLI_ASSOC);
+            echo json_encode($rows);
+            exit();
+        }
+    }
