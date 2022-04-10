@@ -18,6 +18,10 @@
             
         </select>
     </div>
+    <img src="./images/home.png" alt="" width="50" hight="50" onclick="document.forms.gooo.submit()" > 
+          <form action="" method="post" name="gooo">
+          <input type="hidden" name="page" value="admin/ad_main.php">
+          </form>
 <script src="./js/jquery.js"></script>
 <script>
     
@@ -30,9 +34,17 @@
         p['part_id']=x.value;
         p['form_name']='get_levels';
         $.post("./index.php",p,function(datatext){
-        alert(datatext);
+        //alert(datatext);
         ops=JSON.parse(datatext);
-        alert(ops[0]['name'])
+        for (let index = 0; index < ops.length; index++) {
+            //const element = array[index];
+            //alert(ops[index]['name']) ;
+            opt = document.createElement("option");
+            opt.value= ops[index]['id'];
+            opt.innerHTML = ops[index]['name'];
+            document.getElementById('level').appendChild(opt);
+        }
+        //alert(ops[0]['name'])
 
     });
     }

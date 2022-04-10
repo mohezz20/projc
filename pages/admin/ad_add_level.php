@@ -27,6 +27,10 @@
         <br /><br />
         <input type="submit" name="send" value="ارسال">
     </form>
+    <img src="./images/home.png" alt="" width="50" hight="50" onclick="document.forms.gooo.submit()" > 
+          <form action="" method="post" name="gooo">
+          <input type="hidden" name="page" value="admin/ad_main.php">
+          </form>
 </body>
 
 </html>
