@@ -33,6 +33,7 @@ class myload {
                 $filled=str_replace($keys,$myrow,$snipt);
                 //echo $filled;
                 $contents .=$filled;
+                
             }
             //echo '{{'.$v.'}}' . '    ' . $contents;
             $fcont = str_replace('{{'.$v.'}}' ,$contents,$fcont);
