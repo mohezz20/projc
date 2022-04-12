@@ -104,7 +104,7 @@ window.onload= checkparts;
                     
                 }
             </script>
-=======
+
     });
     }
     function checkparts() {
@@ -117,7 +117,7 @@ window.onload= checkparts;
     }
 
 </script>
->>>>>>> e9c69cb9fdf730548a241ab9ec74111cb511a29c
+
 </body>
 
 </html>
