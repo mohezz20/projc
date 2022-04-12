@@ -24,11 +24,17 @@
           </form>
 <script src="./js/jquery.js"></script>
 <script>
+window.onload= sayhi;
     
     function fill_level(){
         x=document.getElementById('parts')
         //alert(x.value);
         //this.options[this.selectedIndex].value
+        var levels = document.getElementById('level').options;
+        var indexs = levels.length;
+        while (indexs--) {
+            document.getElementById('level').remove(indexs);
+        }
         
         p={};
         p['part_id']=x.value;
@@ -48,6 +54,10 @@
 
     });
     }
+    function sayhi() {
+        if( )
+    }
+
 </script>
 </body>
 
