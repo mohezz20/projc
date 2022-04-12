@@ -71,7 +71,6 @@ window.onload= checkparts;
             document.getElementById('parts').disabled = true;
             document.getElementById('level').disabled = true;
             document.getElementById('noparts').style.visibility = "visible";
-
         }
     }
 
