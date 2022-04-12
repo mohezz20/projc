@@ -20,11 +20,23 @@
     </div>
     <img src="./images/home.png" alt="" width="50" hight="50" onclick="document.forms.gooo.submit()" > 
           <form action="" method="post" name="gooo">
-          <input type="hidden" name="page" value="admin/ad_main.php">
+                <input type="hidden" name="page" value="admin/ad_main.php">
           </form>
+          <div id="noparts" style="visibility:hidden">
+            <p>
+                يبدو أنك لم تقم بإدخال اقسام لهذه الكلية 
+                <br>
+                يرجي إدخال الاقسام أولاً
+
+            </p>
+            <form action="" method="post" name="goback">
+                <input type="hidden" name="page" value="admin/ad_add_part.php">
+                <input type="submit" value="أضف فسم" >
+            </form>
+          </div>
 <script src="./js/jquery.js"></script>
 <script>
-window.onload= sayhi;
+window.onload= checkparts;
     
     function fill_level(){
         x=document.getElementById('parts')
@@ -54,8 +66,13 @@ window.onload= sayhi;
 
     });
     }
-    function sayhi() {
-        if( )
+    function checkparts() {
+        if(document.getElementById('parts').options.length <1 ){
+            document.getElementById('parts').disabled = true;
+            document.getElementById('level').disabled = true;
+            document.getElementById('noparts').style.visibility = "visible";
+
+        }
     }
 
 </script>
