@@ -38,7 +38,7 @@
     </div>
     <div id="nolevels" style="visibility:hidden">
         <p>
-            يبدو أنك لم تقم بإدخال فرق لهذه الكلية
+            يبدو أنك لم تقم بإدخال فرق لهذا القسم
             <br>
             يرجي إدخال الفرق أولاً
 
@@ -84,10 +84,11 @@
                         opt.innerHTML = ops[index]['name'];
                         document.getElementById('level').appendChild(opt);
                     }
+                    document.getElementById('level').disabled = false;
                     document.getElementById('add_stu').style.visibility = "visible";
                 }else{
                     document.getElementById('level').disabled = true;
-                    document.forms.golevel.part_id.value=document.getElementById('part').value
+                    document.forms.golevel.part_id.value=document.getElementById('parts').value
                     document.getElementById('nolevels').style.visibility = "visible";
                 }
                 
@@ -101,6 +102,9 @@
                 document.getElementById('parts').disabled = true;
                 document.getElementById('level').disabled = true;
                 document.getElementById('noparts').style.visibility = "visible";
+            }else{
+                fill_level();
+                //document.getElementById('level').disabled = false;
             }
         }
         function fill_stu(){
