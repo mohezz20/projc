@@ -50,7 +50,7 @@
         </form>
     </div>
     <div id="add_stu" style="visibility:hidden">
-    <form action="" method="post" name="golstu">
+    <form action="" method="post" name="gostu">
             <input type="hidden" name="level_id" >
             <input type="hidden" name="page" value="admin/ad_add_stu.php">
             <input type="submit" value="أضف طالب">
