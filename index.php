@@ -48,7 +48,7 @@ function login()
         $_POST['page'] = 'login.php';
     }
 }
-function creat_ad()
+function create_ad()
 {
     if (checklogin()) {
         global $db;
@@ -106,6 +106,25 @@ function add_level(){
     }
     
 }
+function create_stu(){
+    if (checklogin()) {
+        global $db;
+        include './autoInsert.php';
+        $ins = new autoInsert();
+        $ins->db_conn = $db;
+        $res = mysqli_query($ins->db_conn, "SELECT PASSWORD('123456') as pass ");
+        $_POST['pass'] = $res->fetch_assoc()['pass'];
+        $last_id = $ins->iInsert('users', $_POST);
+        if($last_id){
+            $_POST['users_id']=$last_id;
+            $ins->iInsert('stu', $_POST);
+        }
+        //var_dump($last_id);
+    }else{
+        $_POST['page'] = 'login.php';
+    }
+    
+}
 function get_levels(){
         if (checklogin()) {
             global $db;
@@ -119,3 +138,21 @@ function get_levels(){
             exit();
         }
     }
+function create_dr(){
+    if (checklogin()) {
+        global $db;
+        include './autoInsert.php';
+        $ins = new autoInsert();
+        $ins->db_conn = $db;
+        $res = mysqli_query($ins->db_conn, "SELECT PASSWORD('123456') as pass ");
+        $_POST['pass'] = $res->fetch_assoc()['pass'];
+        $last_id = $ins->iInsert('users', $_POST);
+        if($last_id){
+            $_POST['users_id']=$last_id;
+            $ins->iInsert('dr', $_POST);
+        }
+        //var_dump($last_id);
+    }else{
+        $_POST['page'] = 'login.php';
+    }
+}

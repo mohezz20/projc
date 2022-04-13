@@ -86,6 +86,7 @@
                     }
                     document.getElementById('level').disabled = false;
                     document.getElementById('add_stu').style.visibility = "visible";
+                    document.forms.gostu.level_id.value=document.getElementById('level').value
                 }else{
                     document.getElementById('level').disabled = true;
                     document.forms.golevel.part_id.value=document.getElementById('parts').value

@@ -23,7 +23,7 @@
             <input type="submit" name="send" value="">
             <input type="hidden" name="role" value="ad">
             <input type="hidden" name="page" value="su_admin/su_main.php">
-            <input type="hidden" name="form_name" value="creat_ad">
+            <input type="hidden" name="form_name" value="create_ad">
 
             
         </form>
