@@ -14,7 +14,7 @@
     <br/><br/>
     إضافة المادة
     <input type="text"  name="subj_name" placeholder="" >
-    <input type="hidden"  name="term_id" value="" >
+    <input type="hidden"  name="term_id" value="{{term_id}}" >
  
     <input type="hidden" name="id" value="id"><br/><br/>
     <input type="submit" name="send" id="reg" value="إرسال">

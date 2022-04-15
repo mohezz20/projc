@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 09, 2022 at 10:10 PM
+-- Generation Time: Apr 15, 2022 at 11:19 PM
 -- Server version: 10.4.8-MariaDB
 -- PHP Version: 7.3.10
 
@@ -30,6 +30,7 @@ USE `our_project`;
 -- Table structure for table `collages`
 --
 
+DROP TABLE IF EXISTS `collages`;
 CREATE TABLE `collages` (
   `id` int(11) NOT NULL,
   `collage_name` varchar(100) NOT NULL,
@@ -46,7 +47,8 @@ INSERT INTO `collages` (`id`, `collage_name`, `admin_id`) VALUES
 (7, 'كلية الطب', 0),
 (8, 'كلية الهندسة ', 0),
 (9, 'زراعة', 8),
-(10, 'الحقوق', 9);
+(10, 'الحقوق', 9),
+(11, 'تربية نوعية', 10);
 
 -- --------------------------------------------------------
 
@@ -54,6 +56,7 @@ INSERT INTO `collages` (`id`, `collage_name`, `admin_id`) VALUES
 -- Table structure for table `dr`
 --
 
+DROP TABLE IF EXISTS `dr`;
 CREATE TABLE `dr` (
   `id` int(11) NOT NULL,
   `name` varchar(100) NOT NULL,
@@ -78,6 +81,7 @@ INSERT INTO `dr` (`id`, `name`, `email`, `password`, `r_name`, `subj_id`) VALUES
 -- Table structure for table `ghyab`
 --
 
+DROP TABLE IF EXISTS `ghyab`;
 CREATE TABLE `ghyab` (
   `id` int(11) NOT NULL,
   `users_id` int(11) NOT NULL,
@@ -90,6 +94,7 @@ CREATE TABLE `ghyab` (
 -- Table structure for table `lects`
 --
 
+DROP TABLE IF EXISTS `lects`;
 CREATE TABLE `lects` (
   `id` int(11) NOT NULL,
   `subj_id` int(11) NOT NULL,
@@ -109,6 +114,7 @@ INSERT INTO `lects` (`id`, `subj_id`, `lect_date`) VALUES
 -- Table structure for table `level`
 --
 
+DROP TABLE IF EXISTS `level`;
 CREATE TABLE `level` (
   `id` int(11) NOT NULL,
   `part_id` int(11) NOT NULL,
@@ -123,7 +129,12 @@ INSERT INTO `level` (`id`, `part_id`, `name`) VALUES
 (1, 3, ' الفرقة الاولى '),
 (2, 2, 'الفرقة الثانية '),
 (3, 3, 'الفرقة الثالثة '),
-(4, 1, 'الفرقة الرابعة ');
+(4, 1, 'الفرقة الرابعة '),
+(5, 7, 'الأولي'),
+(6, 7, 'الثانية'),
+(7, 7, 'الثالثة'),
+(8, 9, 'الفرقة الأولي'),
+(9, 9, 'الفرقة الثانية');
 
 -- --------------------------------------------------------
 
@@ -131,6 +142,7 @@ INSERT INTO `level` (`id`, `part_id`, `name`) VALUES
 -- Table structure for table `massg`
 --
 
+DROP TABLE IF EXISTS `massg`;
 CREATE TABLE `massg` (
   `id` int(11) NOT NULL,
   `from_id` int(11) NOT NULL,
@@ -152,6 +164,7 @@ INSERT INTO `massg` (`id`, `from_id`, `to_id`, `body`, `title`) VALUES
 -- Table structure for table `parts`
 --
 
+DROP TABLE IF EXISTS `parts`;
 CREATE TABLE `parts` (
   `id` int(11) NOT NULL,
   `name` varchar(50) NOT NULL,
@@ -167,7 +180,12 @@ INSERT INTO `parts` (`id`, `name`, `collage_id`) VALUES
 (2, 'قسم فنية ', 5),
 (3, 'اقتصاد', 5),
 (4, 'kاجليزي', 6),
-(5, 'فرنساوي', 6);
+(5, 'فرنساوي', 6),
+(6, 'فنية', 11),
+(7, 'اقتصاد', 11),
+(8, 'تكنولوجيا', 11),
+(9, 'عربي', 10),
+(10, 'انجليزي', 10);
 
 -- --------------------------------------------------------
 
@@ -175,6 +193,7 @@ INSERT INTO `parts` (`id`, `name`, `collage_id`) VALUES
 -- Table structure for table `stu`
 --
 
+DROP TABLE IF EXISTS `stu`;
 CREATE TABLE `stu` (
   `id` int(11) NOT NULL,
   `level_id` int(11) NOT NULL,
@@ -198,6 +217,7 @@ INSERT INTO `stu` (`id`, `level_id`, `users_id`) VALUES
 -- Table structure for table `subj`
 --
 
+DROP TABLE IF EXISTS `subj`;
 CREATE TABLE `subj` (
   `id` int(11) NOT NULL,
   `name` varchar(50) NOT NULL,
@@ -219,6 +239,7 @@ INSERT INTO `subj` (`id`, `name`, `term_id`) VALUES
 -- Table structure for table `term`
 --
 
+DROP TABLE IF EXISTS `term`;
 CREATE TABLE `term` (
   `id` int(11) NOT NULL,
   `name` varchar(50) NOT NULL,
@@ -239,6 +260,7 @@ INSERT INTO `term` (`id`, `name`, `level_id`) VALUES
 -- Table structure for table `users`
 --
 
+DROP TABLE IF EXISTS `users`;
 CREATE TABLE `users` (
   `id` int(11) NOT NULL,
   `name` varchar(50) NOT NULL,
@@ -257,7 +279,8 @@ INSERT INTO `users` (`id`, `name`, `email`, `role`, `pass`) VALUES
 (5, 'asmaa', 'medo4@medo.com', 'stu', '*6BB4837EB74329105EE4568DDA7DC67ED2CA2AD9'),
 (6, 'المسؤول الكبير', 'su@fyun.com', 'su', '*6BB4837EB74329105EE4568DDA7DC67ED2CA2AD9'),
 (8, 'محمد زارع', 'z@fyun.com', 'ad', '*6BB4837EB74329105EE4568DDA7DC67ED2CA2AD9'),
-(9, 'حقاني', 'r@fyun.com', 'ad', '*6BB4837EB74329105EE4568DDA7DC67ED2CA2AD9');
+(9, 'حقاني', 'r@fyun.com', 'ad', '*6BB4837EB74329105EE4568DDA7DC67ED2CA2AD9'),
+(10, 'مالك', 'm@fyun.com', 'ad', '*6BB4837EB74329105EE4568DDA7DC67ED2CA2AD9');
 
 --
 -- Indexes for dumped tables
@@ -342,7 +365,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `collages`
 --
 ALTER TABLE `collages`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT for table `dr`
@@ -366,7 +389,7 @@ ALTER TABLE `lects`
 -- AUTO_INCREMENT for table `level`
 --
 ALTER TABLE `level`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `massg`
@@ -378,7 +401,7 @@ ALTER TABLE `massg`
 -- AUTO_INCREMENT for table `parts`
 --
 ALTER TABLE `parts`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `stu`
@@ -402,7 +425,7 @@ ALTER TABLE `term`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

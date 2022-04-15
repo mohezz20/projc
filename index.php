@@ -12,7 +12,7 @@ if (isset($_POST['form_name'])) {
    exit(); */
     } else {
         echo 'there is wrong something';
-        exit;
+        exit();
     }
 }
 if (isset($_POST['page'])) {
@@ -48,6 +48,8 @@ function login()
         $_POST['page'] = 'login.php';
     }
 }
+
+
 function create_ad()
 {
     if (checklogin()) {

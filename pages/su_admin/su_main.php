@@ -14,7 +14,7 @@
 اسم الكلية 
 <input type="text" name="collage_name" id=" "><br /><br />
             اسم المسئول<br />
-            <input type="text" name=" name" id=" "><br /><br />
+            <input type="text" name="name" id=" "><br /><br />
             الايميل<br />
 
             <input type="email" name="email" id=""><br /><br />
