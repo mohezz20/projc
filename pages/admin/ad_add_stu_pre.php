@@ -57,6 +57,7 @@
         </form>
     </div>
     <script src="./js/jquery.js"></script>
+   <!-- ----------------------------------- -->
     <script>
         window.onload = checkparts;
 

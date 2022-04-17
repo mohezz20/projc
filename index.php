@@ -24,7 +24,7 @@ if (isset($_POST['page'])) {
     $load->load($x);
     //echo $x;
 }
-
+//////////////////////////////////////////////////////////////////////////
 function login()
 {
     global $db;
@@ -108,6 +108,7 @@ function add_level(){
     }
     
 }
+
 function create_stu(){
     if (checklogin()) {
         global $db;
@@ -127,6 +128,7 @@ function create_stu(){
     }
     
 }
+
 function get_levels(){
         if (checklogin()) {
             global $db;
@@ -140,7 +142,8 @@ function get_levels(){
             exit();
         }
     }
-function create_dr(){
+
+    function create_dr(){
     if (checklogin()) {
         global $db;
         include './autoInsert.php';
