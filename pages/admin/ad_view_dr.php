@@ -17,7 +17,7 @@
             </tr> 
              <div>
 <tbody>
-    {{dr.cut}}
+    {{dr_cut}}
 </tbody>    
 </table>
 </form>    

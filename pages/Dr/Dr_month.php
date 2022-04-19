@@ -23,7 +23,7 @@
                 <th> عدد مرات الغياب </th>
         </thead>
         <tbody>
-         {{report cut}}
+         {{report_cut}}
         </tbody>
      </table>
      <br>
